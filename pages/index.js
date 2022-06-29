@@ -9,7 +9,9 @@ export default function Home() {
 
 	const [loadingState, setLoadingState] = useState('not-loaded');
 	const [sacs,setSacs] = useState([])
-	const [can,setCan] = useState(false)
+	const [can,setCan] = useState(0)
+
+	const message = ["blank","You're not registered in any sacrifice", "Claim All Wait"]
 	
 
 	const [Pulse, setPulse] = useState(0);
@@ -32,7 +34,6 @@ export default function Home() {
 	
 		const provider = new ethers.providers.Web3Provider(connection);
 		const signer = provider.getSigner()
-		console.log(signer.provider.provider.selectedAddress)
 
 		// const addy = signer.provider.provider.selectedAddress
 		const addy = ("0x4a514a827d9644ddd394477a30f0513cfabf6ffd")
@@ -80,15 +81,10 @@ export default function Home() {
 		)
 
 
-		console.log(sacs)
 		
 	
 
 	
-		// if (data.Pulse.includes(params.address)){
-		// 	console.log("Pulse")
-		// 	shit+=1
-		// }
 
 		setLoadingState("loaded")
 
@@ -101,10 +97,9 @@ export default function Home() {
 	
 		const provider = new ethers.providers.Web3Provider(connection);
 		const signer = provider.getSigner()
-		console.log(signer.provider.provider.selectedAddress)
 
-		// const addy = signer.provider.provider.selectedAddress
-		const addy = ("0x4a514a827d9644ddd394477a30f0513cfabf6ffd")
+		const addy = signer.provider.provider.selectedAddress
+		// const addy = ("0x4a514a827d9644ddd394477a30f0513cfabf6ffd")
 		const yes = [{
 			name: "Pulse",
 			image: "pulse.png",
@@ -151,9 +146,11 @@ export default function Home() {
 
 		let result = yes.map(a => a.in);
 
-		console.log(result)
 		if(result.includes(true)){
-			setCan(true)
+			setCan(2)
+		}
+		else{
+			setCan(1)
 		}
 	}
 
@@ -183,9 +180,13 @@ export default function Home() {
 					<div className='w-full bg-white flex flex-col relative justify-center items-center lg:flex-row gap-5'>
 						<button className='w-5/12 h-20 text-xl text-white text-center bg-[#324dff] border-4 border-black my-5' onClick={load}>Check Database!</button>
 					</div>
-					{ can ? 
+					{ can !=0 ? 
 					<div className='w-full bg-white flex flex-col relative justify-center items-center lg:flex-row gap-5'>
-						<button className='w-5/12 h-20 text-xl text-white text-center bg-[#324dff] border-4 border-black my-5' >Claim All WAIT</button>
+						{can==1?
+							<h1 className='text-5xl '>You're not registered in any sacrifice!</h1>
+						:
+						<button className='w-5/12 h-20 text-xl text-white text-center bg-[#324dff] border-4 border-black my-5' >Claim All Wait!</button>
+						}
 					</div>
 					:
 					<></>
@@ -228,7 +229,7 @@ export default function Home() {
 				</>
 			):(
 				<p>
-					Not Loaded
+					Not Loaded. Make sure you're connected to MetaMask!
 				</p>
 			)}
 		</div>
