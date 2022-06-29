@@ -88,7 +88,7 @@ export default function Home() {
 
 		setLoadingState("loaded")
 
-	}
+	}// eslint-disable-line react-hooks/exhaustive-deps
 
 	async function load(){
 		const web3Modal = new Web3Modal()
@@ -152,7 +152,7 @@ export default function Home() {
 		else{
 			setCan(1)
 		}
-	}
+	}// eslint-disable-line react-hooks/exhaustive-deps
 
 
 	
