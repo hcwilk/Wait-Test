@@ -205,7 +205,7 @@ export default function Home() {
 							</div>
 							<div>
 								<div className='w-full bg-white flex flex-col relative justify-center lg:flex-row gap-5'>
-									<a className=" text-black text-center text-xl font-sans mx-16 my-6">If you participated in the {sac.name} sacrifice, you are eligible to claim free $WAIT tokens. You can claim your $WAIT for PLS here.</a>
+									<a className=" text-black text-center text-xl font-sans mx-16 my-6">If you participated in the {sac.name} sacrifice, you are eligible to claim free $WAIT tokens. You can claim your $WAIT for {sac.name} here.</a>
 								</div>
 								{sacs[index].in ?
 									<div className='w-full bg-white flex flex-col relative justify-center items-center lg:flex-row gap-5'>
