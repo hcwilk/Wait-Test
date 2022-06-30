@@ -195,12 +195,12 @@ export default function Home() {
 				<>
 				
 				<div>
-					<div className='w-screen h-32 bg-[#252E3F] flex items-center justify-center lg:flex-row flex-col'>
+					<div className='w-screen md:h-32 h-60 bg-[#252E3F] flex items-center justify-center md:flex-row flex-col'>
 						<div className='h-24 w-24 '>
 							<img src='WAIT.png'></img>
 						</div>
 						<h1 className='text-white text-6xl font-semibold mx-12'>$WAIT</h1> 
-						<h1 className='text-gray-400 text-6xl font-semibold lg:my-2 mb-24'>SAMPLE DATA</h1> 
+						<h1 className='text-gray-400 text-6xl font-semibold lg:my-2'>SAMPLE DATA</h1> 
 					</div>
 					<div className='w-full bg-[#00e7fa] flex justify-center items-center '>
 						<a className=" text-[#252e3f] text-2xl font-sans font-bold mx-20 my-6 text-center">Check how much $WAIT you're entitled to, come back to claim July 5th!</a>
@@ -214,7 +214,7 @@ export default function Home() {
 						<form className='flex flex-col justify-center items-center' onSubmit={load}>
 							<input className='w-2/3 h-16 text-xl font-semibolds text-center px-10 bg-gray-200' placeholder="Enter your Ethereum Address" onChange={(e) => setAddr(e.target.value)}></input>
 
-							<button type='submit'  className='lg:w-5/12 w-3/5 h-12 md:text-xl text-lg text-white text-center bg-[#324dff] border-4 border-black my-5'>Check Database!</button>
+							<button type='submit'  className='md:w-5/12 w-3/5 h-12 md:text-xl text-lg text-white text-center bg-[#324dff] border-4 border-black my-5'>Check Database!</button>
 
 						</form>
 
@@ -223,13 +223,13 @@ export default function Home() {
 					{can==1?
 					<>
 					<h1 className='text-xl text-center '>checking address: {addr}</h1>
-					<div className='lg:w-5/12 h-16 w-3/5 lg:text-xl md:text-lg text-sm text-center bg-red-300 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Oh No! It doesn't look like you participated in any of the sacrifices</h1> </div>
+					<div className='md:w-5/12 h-16 w-3/5 lg:text-xl md:text-lg text-sm text-center bg-red-300 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Oh No! It doesn't look like you participated in any of the sacrifices</h1> </div>
 					</>
 				
 						:
 						<>
 						<h1 className='text-xl text-center'>checking address: {addr}</h1>
-						<div className='lg:w-5/12 h-16 w-3/5 lg:text-xl md:text-lg text-sm text-center bg-green-100 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Success! Come back on July 5th to claim your $WAIT</h1></div>
+						<div className='md:w-5/12 h-16 w-3/5 lg:text-xl md:text-lg text-sm text-center bg-green-100 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Success! Come back on July 5th to claim your $WAIT</h1></div>
 					</>
 					}
 				</div>
