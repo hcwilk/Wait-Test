@@ -102,10 +102,12 @@ export default function Home() {
 
 		const fsdaf = address.toLowerCase()
 
-		console.log("lower",fsdaf)
+		const str = fsdaf.replace(/\s+/g, '');
+
+		console.log("lower",str)
 
 		// const addy = signer.provider.provider.selectedAddress
-		const addy = (fsdaf)
+		const addy = (str)
 		const yes = [{
 			name: "Pulse",
 			image: "pulse.png",
