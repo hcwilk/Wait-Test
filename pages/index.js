@@ -201,7 +201,7 @@ export default function Home() {
 					<div className='w-full bg-white flex flex-col justify-center items-center mt-6'>
 						<input className='w-2/3 h-16 text-xl font-semibolds text-center px-10 bg-gray-200' placeholder="Enter your Ethereum Address" onChange={(e) => setAddr(e.target.value)}></input>
 
-						<button className='w-4/12 h-12 md:text-xl text-lg text-white text-center bg-[#324dff] border-4 border-black my-5' onClick={() => {load(addr)}}>Check Database!</button>
+						<button className='lg:w-5/12 w-3/5 h-12 md:text-xl text-lg text-white text-center bg-[#324dff] border-4 border-black my-5' onClick={() => {load(addr)}}>Check Database!</button>
 
 					{can>0?
 					<div className='w-full bg-white flex flex-col items-center'>
