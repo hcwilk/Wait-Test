@@ -192,7 +192,7 @@ export default function Home() {
 						<h1 className='text-white text-6xl font-semibold ml-20'>$Wait</h1>
 					</div>
 					<div className='w-full bg-[#00e7fa] flex justify-center items-center '>
-						<a className=" text-[#252e3f] text-2xl font-sans font-bold mx-20 my-6">Check how much $WAIT you're able to claim, starting July 5th!</a>
+						<a className=" text-[#252e3f] text-2xl font-sans font-bold mx-20 my-6 text-center">Check how much $WAIT you're able to claim, starting July 5th!</a>
 					</div>
 					{/* <div className='w-full bg-white flex justify-center'>
 						<a className=" text-black text-center text-2xl font-sans mx-16 my-6 w-3/5">If you participated in any of the below sacrifices, you are eligible to claim free $WAIT tokens. You can claim by project or all at once.</a>
@@ -201,20 +201,20 @@ export default function Home() {
 					<div className='w-full bg-white flex flex-col justify-center items-center mt-6'>
 						<input className='w-2/3 h-16 text-xl font-semibolds text-center px-10 bg-gray-200' placeholder="Enter your Ethereum Address" onChange={(e) => setAddr(e.target.value)}></input>
 
-						<button className='w-4/12 h-12 text-xl text-white text-center bg-[#324dff] border-4 border-black my-5' onClick={() => {load(addr)}}>Check Database!</button>
+						<button className='w-4/12 h-12 md:text-xl text-lg text-white text-center bg-[#324dff] border-4 border-black my-5' onClick={() => {load(addr)}}>Check Database!</button>
 
 					{can>0?
 					<div className='w-full bg-white flex flex-col items-center'>
 					{can==1?
 					<>
 					<h1 className='text-xl text-center mb-6'>checking address: {addr}</h1>
-					<div className='w-1/3 h-16 text-xs lg:text-xl text-center bg-red-300 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Oh No! It doesn't look like you participated in any of the sacrifices</h1> </div>
+					<div className='lg:w-5/12 h-16 w-3/5 lg:text-xl md:text-lg text-sm text-center bg-red-300 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Oh No! It doesn't look like you participated in any of the sacrifices</h1> </div>
 					</>
 				
 						:
 						<>
 						<h1 className='text-xl text-center mb-6'>checking address: {addr}</h1>
-						<div className='w-1/3 h-16 lg:text-xl text-xs text-center bg-green-100 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Success! Come back on July fifth to claim your {wait} $WAIT</h1></div>
+						<div className='lg:w-5/12 h-16 w-3/5 lg:text-xl md:text-lg text-sm text-center bg-green-100 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Success! Come back on July fifth to claim your {wait} $WAIT</h1></div>
 					</>
 					}
 				</div>
