@@ -207,14 +207,14 @@ export default function Home() {
 					<div className='w-full bg-white flex flex-col items-center'>
 					{can==1?
 					<>
-					<h1 className='text-xl text-center'>checking address: {addr}</h1>
-					<div className='w-1/3 h-16 text-xl  text-center bg-red-300 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Oh No! It doesn't look like you participated in any of the sacrifices</h1> </div>
+					<h1 className='text-xl text-center mb-6'>checking address: {addr}</h1>
+					<div className='w-1/3 h-16 text-xs lg:text-xl text-center bg-red-300 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Oh No! It doesn't look like you participated in any of the sacrifices</h1> </div>
 					</>
 				
 						:
 						<>
-						<h1 className='text-xl'>checking address: {addr}</h1>
-						<div className='w-1/3 h-16 text-xl  text-center bg-red-300 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Success! Come back on July fifth to claim your {wait} $WAIT</h1></div>
+						<h1 className='text-xl text-center mb-6'>checking address: {addr}</h1>
+						<div className='w-1/3 h-16 lg:text-xl text-xs text-center bg-green-100 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Success! Come back on July fifth to claim your {wait} $WAIT</h1></div>
 					</>
 					}
 				</div>
@@ -251,7 +251,7 @@ export default function Home() {
 						<div className='flex lg:justify-between lg:flex-row flex-col w-1/2 lg:w-full'>
 							{end.map((row,i) => (
 								<div key={i} className='lg:w-1/4 w-full flex items-center flex-col'>
-									<div className='mt-12 '>
+									<div className='lg:mt-12 '>
 										<h1 className='text-3xl font-semibold text-center'>{row.name}</h1>
 										<img className='w-48 h-48' src={row.image}></img>
 										{can>0?
