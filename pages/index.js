@@ -100,8 +100,12 @@ export default function Home() {
 
 	async function load(address){
 
+		const fsdaf = address.toLowerCase()
+
+		console.log("lower",fsdaf)
+
 		// const addy = signer.provider.provider.selectedAddress
-		const addy = (address)
+		const addy = (fsdaf)
 		const yes = [{
 			name: "Pulse",
 			image: "pulse.png",
@@ -186,7 +190,7 @@ export default function Home() {
 				
 				<div>
 					<div className='w-screen h-32 bg-[#252E3F] flex items-center'>
-						<div className='h-24 w-24 ml-16'>
+						<div className='h-24 w-24 ml-12'>
 							<img src='WAIT.png'></img>
 						</div>
 						<h1 className='text-white text-6xl font-semibold ml-12'>$Wait</h1>
