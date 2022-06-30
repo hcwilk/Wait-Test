@@ -185,36 +185,36 @@ export default function Home() {
 				<>
 				
 				<div>
-					<div className='w-screen h-48 bg-[#252E3F] flex items-center'>
-						<div className='h-36 w-36 ml-16'>
+					<div className='w-screen h-32 bg-[#252E3F] flex items-center'>
+						<div className='h-24 w-24 ml-16'>
 							<img src='WAIT.png'></img>
 						</div>
-						<h1 className='text-white text-8xl font-semibold ml-20'>$Wait</h1>
+						<h1 className='text-white text-6xl font-semibold ml-20'>$Wait</h1>
 					</div>
-					<div className='w-full bg-[#00e7fa] flex flex-col relative justify-center items-center lg:flex-row gap-5'>
-						<a className=" text-[#252e3f] text-4xl font-sans font-bold mx-20 my-6">Check how much $WAIT you're able to claim, starting July 5th!</a>
+					<div className='w-full bg-[#00e7fa] flex justify-center items-center '>
+						<a className=" text-[#252e3f] text-2xl font-sans font-bold mx-20 my-6">Check how much $WAIT you're able to claim, starting July 5th!</a>
 					</div>
-					<div className='w-full bg-white flex flex-col relative justify-center items-center lg:flex-row gap-5'>
-						<a className=" text-black text-center text-4xl font-sans font-thin mx-16 my-6">If you participated in any of the below sacrifices, you are eligible to claim free $WAIT tokens. You can claim by project or all at once.</a>
-					</div>
+					{/* <div className='w-full bg-white flex justify-center'>
+						<a className=" text-black text-center text-2xl font-sans mx-16 my-6 w-3/5">If you participated in any of the below sacrifices, you are eligible to claim free $WAIT tokens. You can claim by project or all at once.</a>
+					</div> */}
 
-					<div className='w-full bg-white flex flex-col justify-center items-center mt-8'>
-						<input className='w-2/3 h-20 text-2xl font-semibolds text-center px-10 bg-gray-200' placeholder="Enter your Ethereum Address" onChange={(e) => setAddr(e.target.value)}></input>
+					<div className='w-full bg-white flex flex-col justify-center items-center mt-6'>
+						<input className='w-2/3 h-16 text-xl font-semibolds text-center px-10 bg-gray-200' placeholder="Enter your Ethereum Address" onChange={(e) => setAddr(e.target.value)}></input>
 
-						<button className='w-5/12 h-20 text-xl text-white text-center bg-[#324dff] border-4 border-black my-5' onClick={() => {load(addr)}}>Check Database!</button>
+						<button className='w-4/12 h-12 text-xl text-white text-center bg-[#324dff] border-4 border-black my-5' onClick={() => {load(addr)}}>Check Database!</button>
 
 					{can>0?
 					<div className='w-full bg-white flex flex-col items-center'>
 					{can==1?
 					<>
-					<h1 className='text-3xl text-center'>checking address: {addr}</h1>
-					<div className='w-5/12 h-20 text-xl   bg-red-300 border-4 border-black my-5 flex justify-center items-center' ><h1>Oh No! It doesn't look like you participated in any of the sacrifices</h1> </div>
+					<h1 className='text-xl text-center'>checking address: {addr}</h1>
+					<div className='w-1/3 h-16 text-xl  text-center bg-red-300 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Oh No! It doesn't look like you participated in any of the sacrifices</h1> </div>
 					</>
 				
 						:
 						<>
-						<h1 className='text-3xl'>checking address: {addr}</h1>
-						<div className='w-5/12 h-20 text-xl  bg-green-100 border-4 border-black my-5 flex justify-center items-center' ><h1>Success! Come back on July fifth to claim your {wait} $WAIT</h1></div>
+						<h1 className='text-xl'>checking address: {addr}</h1>
+						<div className='w-1/3 h-16 text-xl  text-center bg-red-300 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Success! Come back on July fifth to claim your {wait} $WAIT</h1></div>
 					</>
 					}
 				</div>
@@ -229,7 +229,7 @@ export default function Home() {
 					<div className='flex justify-between lg:flex-row flex-col w-1/2 lg:w-full'>
 						{first.map((row,i) => (
 							<div key={i} className='lg:w-1/4 w-full flex items-center flex-col'>
-								<div className='mt-12 mb-20'>
+								<div className=''>
 									<h1 className='text-3xl font-semibold text-center'>{row.name}</h1>
 									<img className='w-48 h-48' src={row.image}></img>
 									{can>0?
@@ -251,7 +251,7 @@ export default function Home() {
 						<div className='flex lg:justify-between lg:flex-row flex-col w-1/2 lg:w-full'>
 							{end.map((row,i) => (
 								<div key={i} className='lg:w-1/4 w-full flex items-center flex-col'>
-									<div className='mt-12 mb-20'>
+									<div className='mt-12 '>
 										<h1 className='text-3xl font-semibold text-center'>{row.name}</h1>
 										<img className='w-48 h-48' src={row.image}></img>
 										{can>0?
@@ -317,7 +317,7 @@ export default function Home() {
 				</>
 			):(
 				<p>
-					Not Loaded. Make sure you're connected to MetaMask!
+					Loading...
 				</p>
 			)}
 		</div>
