@@ -189,7 +189,7 @@ export default function Home() {
 						<div className='h-24 w-24 ml-16'>
 							<img src='WAIT.png'></img>
 						</div>
-						<h1 className='text-white text-6xl font-semibold ml-20'>$Wait</h1>
+						<h1 className='text-white text-6xl font-semibold ml-12'>$Wait</h1>
 					</div>
 					<div className='w-full bg-[#00e7fa] flex justify-center items-center '>
 						<a className=" text-[#252e3f] text-2xl font-sans font-bold mx-20 my-6 text-center">Check how much $WAIT you're able to claim, starting July 5th!</a>
