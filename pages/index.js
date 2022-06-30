@@ -14,6 +14,7 @@ export default function Home() {
 	const [can,setCan] = useState(0)
 	const [addr, setAddr] = useState("")
 	const [wait,setWait] = useState(0)
+	const [now,setNow] = useState(0)
 
 	const july = 1657026000
 	
@@ -27,13 +28,15 @@ export default function Home() {
 	const [Phiat, setPhiat] = useState(0);
 	const [IMD, setIMD] = useState(0);
 
-	useEffect(()=>{
+	useEffect(() => {
+		
 		init()
-	}, []);
+	  }, []);
 
 	async function init(){
 		
 		console.log(Date.now())
+		setNow(Date.now()/1000)
 		// const addy = signer.provider.provider.selectedAddress
 		const yes = 
 		[{
@@ -50,7 +53,7 @@ export default function Home() {
 		},
 		{
 			name: "Liquid Loans",
-			image: "liquid.jpeg",
+			image: "liquidloans.png",
 			time:1647907200,
 			in: false
 	
@@ -63,7 +66,7 @@ export default function Home() {
 		},
 		{
 			name: "Genius",
-			image: "genius.jpeg",
+			image: "genius.png",
 			time:1654041600,
 			in: false
 		},
@@ -98,9 +101,10 @@ export default function Home() {
 
 	}// eslint-disable-line react-hooks/exhaustive-deps
 
-	async function load(address){
+	const load = e => {
+		e.preventDefault();
 
-		const fsdaf = address.toLowerCase()
+		const fsdaf = addr.toLowerCase()
 
 		const str = fsdaf.replace(/\s+/g, '');
 
@@ -122,7 +126,7 @@ export default function Home() {
 		},
 		{
 			name: "Liquid Loans",
-			image: "liquid.jpeg",
+			image: "liquidloans.png",
 			time:1647907200,
 			in: data.LiquidLoans.includes(addy)
 	
@@ -135,7 +139,7 @@ export default function Home() {
 		},
 		{
 			name: "Genius",
-			image: "genius.jpeg",
+			image: "genius.png",
 			time:1654041600,
 			in: data.Genius.includes(addy)
 		},
@@ -168,7 +172,7 @@ export default function Home() {
 		let sum =0;
 		for(var i = 0; i<8; i++){
 			if(result[i]==true)
-			sum+=(july-time[i])/3600
+			sum+=(now-time[i])/3600
 		}
 		setWait(sum)
 
@@ -191,36 +195,41 @@ export default function Home() {
 				<>
 				
 				<div>
-					<div className='w-screen h-32 bg-[#252E3F] flex items-center'>
-						<div className='h-24 w-24 ml-12'>
+					<div className='w-screen h-32 bg-[#252E3F] flex items-center justify-center lg:flex-row flex-col'>
+						<div className='h-24 w-24 '>
 							<img src='WAIT.png'></img>
 						</div>
-						<h1 className='text-white text-6xl font-semibold ml-12'>$Wait</h1>
+						<h1 className='text-white text-6xl font-semibold mx-12'>$WAIT</h1> 
+						<h1 className='text-gray-400 text-6xl font-semibold lg:my-2 mb-24'>SAMPLE DATA</h1> 
 					</div>
 					<div className='w-full bg-[#00e7fa] flex justify-center items-center '>
-						<a className=" text-[#252e3f] text-2xl font-sans font-bold mx-20 my-6 text-center">Check how much $WAIT you're able to claim, starting July 5th!</a>
+						<a className=" text-[#252e3f] text-2xl font-sans font-bold mx-20 my-6 text-center">Check how much $WAIT you're entitled to, come back to claim July 5th!</a>
 					</div>
+					
 					{/* <div className='w-full bg-white flex justify-center'>
 						<a className=" text-black text-center text-2xl font-sans mx-16 my-6 w-3/5">If you participated in any of the below sacrifices, you are eligible to claim free $WAIT tokens. You can claim by project or all at once.</a>
 					</div> */}
 
-					<div className='w-full bg-white flex flex-col justify-center items-center mt-6'>
-						<input className='w-2/3 h-16 text-xl font-semibolds text-center px-10 bg-gray-200' placeholder="Enter your Ethereum Address" onChange={(e) => setAddr(e.target.value)}></input>
+					<div className='w-full bg-white items-center mt-6'>
+						<form className='flex flex-col justify-center items-center' onSubmit={load}>
+							<input className='w-2/3 h-16 text-xl font-semibolds text-center px-10 bg-gray-200' placeholder="Enter your Ethereum Address" onChange={(e) => setAddr(e.target.value)}></input>
 
-						<button className='lg:w-5/12 w-3/5 h-12 md:text-xl text-lg text-white text-center bg-[#324dff] border-4 border-black my-5' onClick={() => {load(addr)}}>Check Database!</button>
+							<button type='submit'  className='lg:w-5/12 w-3/5 h-12 md:text-xl text-lg text-white text-center bg-[#324dff] border-4 border-black my-5'>Check Database!</button>
+
+						</form>
 
 					{can>0?
 					<div className='w-full bg-white flex flex-col items-center'>
 					{can==1?
 					<>
-					<h1 className='text-xl text-center mb-6'>checking address: {addr}</h1>
+					<h1 className='text-xl text-center '>checking address: {addr}</h1>
 					<div className='lg:w-5/12 h-16 w-3/5 lg:text-xl md:text-lg text-sm text-center bg-red-300 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Oh No! It doesn't look like you participated in any of the sacrifices</h1> </div>
 					</>
 				
 						:
 						<>
-						<h1 className='text-xl text-center mb-6'>checking address: {addr}</h1>
-						<div className='lg:w-5/12 h-16 w-3/5 lg:text-xl md:text-lg text-sm text-center bg-green-100 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Success! Come back on July fifth to claim your {wait} $WAIT</h1></div>
+						<h1 className='text-xl text-center'>checking address: {addr}</h1>
+						<div className='lg:w-5/12 h-16 w-3/5 lg:text-xl md:text-lg text-sm text-center bg-green-100 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Success! Come back on July 5th to claim your $WAIT</h1></div>
 					</>
 					}
 				</div>
@@ -237,13 +246,13 @@ export default function Home() {
 							<div key={i} className='lg:w-1/4 w-full flex items-center flex-col'>
 								<div className=''>
 									<h1 className='text-3xl font-semibold text-center'>{row.name}</h1>
-									<img className='w-48 h-48' src={row.image}></img>
+									<img className='w-48 h-48 p-5' src={row.image}></img>
 									{can>0?
 									<div>
 										{row.in==false?
-										<h1 className='w-48 bg-red-300 text-center text-3xl border-4'>You didn't sacrifice for {row.name}</h1>
+										<h1 className='w-48 bg-red-300 text-center text-3xl border-2 border-black p-4'>Not Eligible for {row.name}</h1>
 										:
-										<h1 className='w-48  bg-green-100 text-center text-2xl border-4'>On July 5th, 8 A.M CST, you'll be able to claim {(july - row.time)/3600} $WAIT</h1>
+										<h1 className='w-48  bg-green-100 text-center text-3xl border-2 border-black p-4'>Claimable WAIT: {Math.floor((now - row.time)/3600)}</h1>
 										}
 									</div>
 									:
@@ -259,13 +268,13 @@ export default function Home() {
 								<div key={i} className='lg:w-1/4 w-full flex items-center flex-col'>
 									<div className='lg:mt-12 '>
 										<h1 className='text-3xl font-semibold text-center'>{row.name}</h1>
-										<img className='w-48 h-48' src={row.image}></img>
+										<img className='w-48 h-48 p-5' src={row.image}></img>
 										{can>0?
 										<div>
 											{row.in==false?
-											<h1 className='w-48 bg-red-300 text-center text-3xl border-4'>You didn't sacrifice for {row.name}</h1>
+											<h1 className='w-48 bg-red-300 text-center text-3xl border-2 border-black p-4'>Not Eligible for {row.name}</h1>
 										:
-											<h1 className='w-48  bg-green-100 text-center text-2xl border-4'>On July 5th, 8 A.M CST, you'll be able to claim {(july - row.time)/3600} $WAIT</h1>
+											<h1 className='w-48  bg-green-100 text-center text-3xl border-2 border-black p-4'>Claimable WAIT: {Math.floor((now - row.time)/3600)} $WAIT</h1>
 											}
 										</div>
 										:
@@ -316,8 +325,26 @@ export default function Home() {
 					))} */}
 						
 
-						
-					
+						<hr className='mt-10  border-black'></hr>
+
+						<div className='h-52 w-full flex flex-col items-center justify-center'>
+							<h1 className='text-2xl font-bold'>Coast- a #pulsechain development company</h1>
+							<div className='flex justify-center'>
+							<a href='https://twitter.com/0xCoast'><img src='twit.png'  className='h-16 w-16 '></img></a>
+							<img src='wifi.png' className='h-16 w-16 p-1'></img>
+
+							</div>
+						</div>
+						<div className='flex justify-center'>
+						</div>
+						<div className='flex justify-center'>
+							<hr className='w-5/6 border-black mb-5'></hr>
+						</div>
+
+						<div className='w-full h-52 flex items-center justify-center'>
+							<p className='w-4/5 text-center leading-loose'>No part of content produced by 0xWait may be redistributed without express written permission from 0xCoast. This content is for educational and informational purposes only and should not constitute investment advice or an offer to sell or the solicitation of an offer to purchase any products or services. This information is not intended for any persons who are prohibited from receiving such information under the laws applicable to their place of citizenship, domicile or residence. © All rights reserved 0xCoast.</p>
+						</div>
+
 				</div>
 				
 				</>
