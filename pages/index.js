@@ -244,15 +244,15 @@ export default function Home() {
 					<div className='flex justify-between lg:flex-row flex-col w-1/2 lg:w-full'>
 						{first.map((row,i) => (
 							<div key={i} className='lg:w-1/4 w-full flex items-center flex-col'>
-								<div className=''>
+								<div className='w-full flex flex-col items-center'>
 									<h1 className='text-3xl font-semibold text-center'>{row.name}</h1>
 									<img className='w-48 h-48 p-5' src={row.image}></img>
 									{can>0?
-									<div>
+									<div className='w-full px-2'>
 										{row.in==false?
-										<h1 className='w-48 bg-red-300 text-center text-3xl border-2 border-black p-4'>Not Eligible for {row.name}</h1>
+										<h1 className='w-full bg-red-300 text-center text-3xl border-2 border-black p-4'>Not Eligible to Claim</h1>
 										:
-										<h1 className='w-48  bg-green-100 text-center text-3xl border-2 border-black p-4'>Claimable WAIT: {Math.floor((now - row.time)/3600)}</h1>
+										<h1 className='w-full  bg-green-100 text-center text-3xl border-2 border-black p-4'>{Math.floor((now - row.time)/3600)} $WAIT Claimable</h1>
 										}
 									</div>
 									:
@@ -266,15 +266,15 @@ export default function Home() {
 						<div className='flex lg:justify-between lg:flex-row flex-col w-1/2 lg:w-full'>
 							{end.map((row,i) => (
 								<div key={i} className='lg:w-1/4 w-full flex items-center flex-col'>
-									<div className='lg:mt-12 '>
+									<div className='lg:mt-12 w-full flex flex-col items-center'>
 										<h1 className='text-3xl font-semibold text-center'>{row.name}</h1>
 										<img className='w-48 h-48 p-5' src={row.image}></img>
 										{can>0?
-										<div>
+										<div className='w-full px-2'>
 											{row.in==false?
-											<h1 className='w-48 bg-red-300 text-center text-3xl border-2 border-black p-4'>Not Eligible for {row.name}</h1>
+											<h1 className='w-full bg-red-300 text-center text-3xl border-2 border-black p-4'>Not Eligible to Claim</h1>
 										:
-											<h1 className='w-48  bg-green-100 text-center text-3xl border-2 border-black p-4'>Claimable WAIT: {Math.floor((now - row.time)/3600)} $WAIT</h1>
+											<h1 className='w-full  bg-green-100 text-center text-3xl border-2 border-black p-4'>{Math.floor((now - row.time)/3600)} $WAIT Claimable</h1>
 											}
 										</div>
 										:
@@ -328,7 +328,7 @@ export default function Home() {
 						<hr className='mt-10  border-black'></hr>
 
 						<div className='h-52 w-full flex flex-col items-center justify-center'>
-							<h1 className='text-2xl font-bold'>Coast- a #pulsechain development company</h1>
+							<h1 className='text-2xl font-bold text-center'>Coast- a #pulsechain development company</h1>
 							<div className='flex justify-center'>
 							<a href='https://twitter.com/0xCoast'><img src='twit.png'  className='h-16 w-16 '></img></a>
 							<img src='wifi.png' className='h-16 w-16 p-1'></img>
@@ -341,7 +341,7 @@ export default function Home() {
 							<hr className='w-5/6 border-black mb-5'></hr>
 						</div>
 
-						<div className='w-full h-52 flex items-center justify-center'>
+						<div className='w-full h-52 flex items-center justify-center lg:mt-1 md:mt-12 mt-24'>
 							<p className='w-4/5 text-center leading-loose'>No part of content produced by 0xWait may be redistributed without express written permission from 0xCoast. This content is for educational and informational purposes only and should not constitute investment advice or an offer to sell or the solicitation of an offer to purchase any products or services. This information is not intended for any persons who are prohibited from receiving such information under the laws applicable to their place of citizenship, domicile or residence. © All rights reserved 0xCoast.</p>
 						</div>
 

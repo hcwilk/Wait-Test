@@ -1,0 +1,44 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-databasechecker-dev-114953-authRole",
+            "UnauthRoleArn": "arn:aws:iam::376730397882:role/amplify-databasechecker-dev-114953-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::376730397882:role/amplify-databasechecker-dev-114953-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-databasechecker-dev-114953-deployment",
+            "UnauthRoleName": "amplify-databasechecker-dev-114953-unauthRole",
+            "StackName": "amplify-databasechecker-dev-114953",
+            "StackId": "arn:aws:cloudformation:us-east-1:376730397882:stack/amplify-databasechecker-dev-114953/aaf27f30-f894-11ec-b24e-0ef6448eef4d",
+            "AmplifyAppId": "da33vfacbnosh"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "da33vfacbnosh",
+                    "type": "cicd"
+                }
+            }
+        }
+    },
+    "please": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-databasechecker-please-134536-authRole",
+            "UnauthRoleArn": "arn:aws:iam::376730397882:role/amplify-databasechecker-please-134536-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::376730397882:role/amplify-databasechecker-please-134536-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-databasechecker-please-134536-deployment",
+            "UnauthRoleName": "amplify-databasechecker-please-134536-unauthRole",
+            "StackName": "amplify-databasechecker-please-134536",
+            "StackId": "arn:aws:cloudformation:us-east-1:376730397882:stack/amplify-databasechecker-please-134536/d58968c0-f8a4-11ec-917a-0a4a8be6cd79",
+            "AmplifyAppId": "d220soozf6shyw"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "d220soozf6shyw",
+                    "type": "cicd"
+                }
+            }
+        }
+    }
+}
