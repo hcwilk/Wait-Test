@@ -1,6 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 export default class MyDocument extends Document {
+	
   render() {
     return (
       <Html>
@@ -17,7 +18,7 @@ export default class MyDocument extends Document {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-              page_path: window.location.pathname,
+              page_path: window.location.pathname, {cookie_flags: 'SameSite=None;Secure'}
             });
           `,
             }}
