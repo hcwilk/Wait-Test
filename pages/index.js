@@ -195,12 +195,12 @@ export default function Home() {
 				<>
 				
 				<div>
-					<div className='w-screen md:h-32 h-60 bg-[#252E3F] flex items-center justify-center md:flex-row flex-col'>
+					<div className='w-screen md:h-32 h-80 bg-[#252E3F] flex items-center justify-center md:flex-row flex-col'>
 						<div className='h-24 w-24 '>
 							<img src='WAIT.png'></img>
 						</div>
 						<h1 className='text-white text-6xl font-semibold mx-12'>$WAIT</h1> 
-						<h1 className='text-gray-400 text-6xl font-semibold lg:my-2'>SAMPLE DATA</h1> 
+						<h1 className='text-gray-400 text-6xl font-semibold lg:my-2 text-center '>SAMPLE DATA</h1> 
 					</div>
 					<div className='w-full bg-[#00e7fa] flex justify-center items-center '>
 						<a className=" text-[#252e3f] text-2xl font-sans font-bold mx-20 my-6 text-center">Check how much $WAIT you're entitled to, come back to claim July 5th!</a>
@@ -341,7 +341,7 @@ export default function Home() {
 							<hr className='w-5/6 border-black mb-5'></hr>
 						</div>
 
-						<div className='w-full h-52 flex items-center justify-center lg:mt-1 md:mt-12 mt-24'>
+						<div className='w-full flex items-center justify-center mt-12'>
 							<p className='w-4/5 text-center leading-loose'>No part of content produced by 0xWait may be redistributed without express written permission from 0xCoast. This content is for educational and informational purposes only and should not constitute investment advice or an offer to sell or the solicitation of an offer to purchase any products or services. This information is not intended for any persons who are prohibited from receiving such information under the laws applicable to their place of citizenship, domicile or residence. © All rights reserved 0xCoast.</p>
 						</div>
 
