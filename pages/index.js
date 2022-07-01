@@ -35,7 +35,6 @@ export default function Home() {
 
 	async function init(){
 		
-		console.log(Date.now())
 		setNow(Date.now()/1000)
 		// const addy = signer.provider.provider.selectedAddress
 		const yes = 
@@ -108,7 +107,6 @@ export default function Home() {
 
 		const str = fsdaf.replace(/\s+/g, '');
 
-		console.log("lower",str)
 
 		// const addy = signer.provider.provider.selectedAddress
 		const addy = (str)
@@ -165,7 +163,6 @@ export default function Home() {
 		setEnd(yes.slice(4,8))
 		setSacs(yes)
 
-		console.log('fuck',yes)
 
 		let result = yes.map(a => a.in);
 		let time = yes.map(a => a.time)
