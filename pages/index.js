@@ -229,7 +229,7 @@ export default function Home() {
 						:
 						<>
 						<h1 className='text-xl text-center'>checking address: {addr}</h1>
-						<div className='md:w-5/12 h-16 w-3/5 lg:text-xl md:text-lg text-sm text-center bg-green-100 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Success! Come back on July 5th to claim your $WAIT</h1></div>
+						<div className='md:w-5/12 h-16 w-3/5 lg:text-xl md:text-lg text-sm text-center bg-green-100 border-4 border-black my-5 flex justify-center items-center' ><h1 className='mx-5'>Success! Come back on July 5th to claim your {Math.floor(wait)} $WAIT</h1></div>
 					</>
 					}
 				</div>
