@@ -199,7 +199,7 @@ export default function Home() {
 						<h1 className='text-white text-6xl font-semibold mx-12 my-6'>$WAIT</h1> 
 						<h1 className='text-gray-400 text-6xl font-semibold lg:my-2 text-center '>SAMPLE DATA</h1> 
 						<button className='rounded-3xl w-60 md:w-40 h-16 bg-blue-400 md:ml-32 my-6' >
-							<a  href="https://demo.0xwait.com/" className='text-xl'> Production Site </a>
+							<a  href="https://app.0xwait.com/" className='text-xl'> Production Site </a>
 						</button>					</div>
 					<div className='w-full bg-[#00e7fa] flex justify-center items-center '>
 						<a className="w-3/5 text-[#252e3f] text-2xl font-sans font-bold mx-20 my-6 text-center">NOTE: This site is meant to check eligibility. If you want to claim Mainnet $WAIT, head to the production site and check the Mainnet Database and claim!</a>
