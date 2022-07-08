@@ -1,7 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-require("@nomiclabs/hardhat-etherscan")
-const fs = require("fs")
-const privateKey = fs.readFileSync(".secret").toString()
 
 
 export default class MyDocument extends Document {
@@ -13,7 +10,7 @@ export default class MyDocument extends Document {
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script
             async
-            src={`https://www.googletagmanager.com/gtag/js?id=${privateKey}`}
+            src={`https://www.googletagmanager.com/gtag/js?id=`}
           />
           <script
             dangerouslySetInnerHTML={{
@@ -21,7 +18,7 @@ export default class MyDocument extends Document {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${privateKey}', {
+            gtag('config', '', {
               page_path: window.location.pathname, 
             });
           `,

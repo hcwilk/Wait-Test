@@ -1,6 +1,3 @@
-const fs = require("fs")
-const privateKey = fs.readFileSync(".secret").toString()
-console.log("shit")
 module.exports = {
 	plugins: [
 	  {
